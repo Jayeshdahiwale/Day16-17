@@ -58,7 +58,7 @@ public class BalancedParantheses<T> {
 			if(element.hashCode()=="(".hashCode()) {
 				push(element);
 			}
-			else if(element.hashCode() != ")".hashCode()) {
+			else if(element.hashCode() == ")".hashCode()) {
 				pop();
 			}
 		}
