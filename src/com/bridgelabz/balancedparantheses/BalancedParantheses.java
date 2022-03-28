@@ -1,21 +1,22 @@
 package com.bridgelabz.balancedparantheses;
 
 public class BalancedParantheses<T> {
-	
+
 	private T t;
 	static int size;
 	Node head;
-	
+
 	public BalancedParantheses(T t) {
 		this.t = t;
 	}
-    
+
 	public boolean isEmpty() {
-		if(head == null) {
+		if (head == null) {
 			return true;
 		}
 		return false;
 	}
+
 	public void push(String data) {
 		Node newNode = new Node(data);
 		if (isEmpty()) {
@@ -25,12 +26,12 @@ public class BalancedParantheses<T> {
 		newNode.next = head;
 		head = newNode;
 	}
-	
-	public void  pop() {
-		//System.out.println(head.element);
-		deleteFirst();	
+
+	public void pop() {
+		// System.out.println(head.element);
+		deleteFirst();
 	}
-	
+
 	private void deleteFirst() {
 		if (isEmpty()) {
 			return;
@@ -38,35 +39,32 @@ public class BalancedParantheses<T> {
 		head = head.next;
 		size--;
 	}
-	
+
 	public void peek() {
-		if(isEmpty()) {
+		if (isEmpty()) {
 			return;
 		}
 		System.out.println(head.element);
 	}
-	
+
 	public int getSize() {
 		System.out.println();
 		return size;
 	}
-	
+
 	public boolean checkParanthesis() {
-		String expression = (String)t;
+		String expression = (String) t;
 		String[] s = expression.split("(?!^)");
-		for(String element: s) {
-			if(element.hashCode()=="(".hashCode()) {
+		for (String element : s) {
+			if (element.hashCode() == "(".hashCode()) {
 				push(element);
-			}
-			else if(element.hashCode() == ")".hashCode()) {
+			} else if (element.hashCode() == ")".hashCode()) {
 				pop();
 			}
 		}
-		if(isEmpty()) {
+		if (isEmpty()) {
 			return true;
 		}
 		return false;
-		
-		
 	}
 }

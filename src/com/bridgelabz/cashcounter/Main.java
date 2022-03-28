@@ -9,7 +9,5 @@ public class Main {
 		counter.enqueue(200);
 		counter.dequeue();
 		System.out.println(counter.noOfPersonInQueue());
-
 	}
-
 }

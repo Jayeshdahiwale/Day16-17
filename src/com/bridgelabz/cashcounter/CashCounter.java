@@ -1,18 +1,17 @@
 package com.bridgelabz.cashcounter;
 
-
 public class CashCounter {
-	
+
 	Person head;
 	static int noOfCustomers;
-	
+
 	public boolean isEmpty() {
-		if(head == null) {
+		if (head == null) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	private void addLast(int money) {
 		Person person = new Person(money);
 		noOfCustomers--;
@@ -30,10 +29,11 @@ public class CashCounter {
 		currPerson.nextPerson = new Person(money);
 		currPerson.nextPerson.bankBalance += currPerson.nextPerson.money;
 	}
+
 	public void enqueue(int money) {
 		addLast(money);
 	}
-	
+
 	private void deleteFirst() {
 		if (isEmpty()) {
 			return;
@@ -41,11 +41,11 @@ public class CashCounter {
 		head = head.nextPerson;
 		noOfCustomers--;
 	}
-	
+
 	public void dequeue() {
 		deleteFirst();
 	}
-	
+
 	public int noOfPersonInQueue() {
 		System.out.println();
 		return noOfCustomers;

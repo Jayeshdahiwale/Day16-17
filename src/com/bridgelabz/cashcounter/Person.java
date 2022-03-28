@@ -8,6 +8,5 @@ public class Person {
 		this.nextPerson = null;
 		this.money = money;
 		CashCounter.noOfCustomers++;
-	}
-	
+	}	
 }
